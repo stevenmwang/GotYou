@@ -3,7 +3,8 @@
 //  GotYou
 //
 //  Created by Steven Wang on 2/9/16.
-//  BRANDONS NOT A SHITHEAD
+//  BRANDON FINISHES HERE v
+//  first                                   last
 //  Copyright © 2016 Stanford. All rights reserved.
 //
 
