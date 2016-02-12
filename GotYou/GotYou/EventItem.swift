@@ -3,7 +3,7 @@
 //  GotYou
 //
 //  Created by Steven Wang on 2/9/16.
-//  BRANDONS A SHITHEAD
+//  BRANDONS NOT A SHITHEAD
 //  Copyright © 2016 Stanford. All rights reserved.
 //
 
