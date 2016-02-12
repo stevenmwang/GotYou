@@ -11,18 +11,18 @@ import UIKit
 class EventItem: NSObject {
     var eventLocation: String
     var startDate: NSDate
-    var endDate: NSDate
+    var duration: Int
     var eventDescription: String
-    var cost: NSInteger
-    var numOrders: NSInteger
+    var cost: Int
+    var numOrders: Int
     
-    init(location: String, startDate: NSDate, endDate: NSDate, eventDesc: String) {
+    init(location: String, startDate: NSDate, duration: Int, eventDesc: String, cost: Int, numOrders: Int) {
         self.eventLocation = location
         self.startDate = startDate
-        self.endDate = endDate
+        self.duration = duration
         self.eventDescription = eventDesc
-        self.cost = 0
-        self.numOrders = 0
+        self.cost = cost
+        self.numOrders = numOrders
     }
     
 }
