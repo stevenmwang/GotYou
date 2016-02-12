@@ -13,12 +13,16 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
 
     @IBOutlet weak var listTableView: UITableView!
     var events = [EventItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let eventModel = EventModel()
-        eventModel.delegate = self
-        eventModel.getJSON()
+        if (events.count == 0) {
+            let eventModel = EventModel()
+            eventModel.delegate = self
+            eventModel.getJSON()
+        }
+        
         
     }
     
@@ -62,6 +66,14 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
         return cell
     }
     
+    @IBAction func unwindToEventList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? AddEventViewController, event = sourceViewController.event {
+            // Add a new meal.
+            let newIndexPath = NSIndexPath(forRow: events.count, inSection: 0)
+            events.append(event)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
