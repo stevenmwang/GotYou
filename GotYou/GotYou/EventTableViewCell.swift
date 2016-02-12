@@ -12,6 +12,7 @@ class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var eventDesc: UILabel!
+
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var cost: UILabel!
     @IBOutlet weak var numOrders: UILabel!
