@@ -4,28 +4,29 @@
 //
 //  Created by Steven Wang on 2/9/16.
 //  *BRANCH AZHANG
-
 //  Updated today
 //  Copyright © 2016 Stanford. All rights reserved.
 //
 
 import UIKit
-
 class EventItem: NSObject {
+    var eventID: Int
+    var userID: Int
     var eventLocation: String
-    var startDate: NSDate
-    var duration: Int
+    var expireDate: NSDate
     var eventDescription: String
-    var cost: Int
     var numOrders: Int
+    var orderLimit: Int
     
-    init(location: String, startDate: NSDate, duration: Int, eventDesc: String, cost: Int, numOrders: Int) {
-        self.eventLocation = location
-        self.startDate = startDate
-        self.duration = duration
-        self.eventDescription = eventDesc
-        self.cost = cost
-        self.numOrders = numOrders
+    init (eventID: Int, userID: Int, eventLocation: String, expireDate: NSDate,
+        eventDescription: String, numOrders: Int, orderLimit: Int) {
+            self.eventID = eventID
+            self.userID = userID
+            self.eventLocation = eventLocation
+            self.expireDate = expireDate
+            self.eventDescription = eventDescription
+            self.numOrders = numOrders
+            self.orderLimit = orderLimit
+            
     }
-    
 }

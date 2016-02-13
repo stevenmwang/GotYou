@@ -13,6 +13,7 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
 
     @IBOutlet weak var listTableView: UITableView!
     var events = [EventItem]()
+    var userID: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +59,8 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
         
         cell.location.text = event.eventLocation
         cell.eventDesc.text = event.eventDescription
-        cell.duration.text = String(event.duration)
-        cell.cost.text = String(event.cost)
+//        cell.duration.text = String(event.duration)
+//        cell.cost.text = String(event.cost)
         cell.numOrders.text = String(event.numOrders)
 
         

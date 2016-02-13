@@ -13,11 +13,12 @@ protocol EventModelProtocal: class {
 }
 
 class EventModel: NSObject, NSURLSessionDelegate {
-    let urlPath:String = "http://localhost/service.php"
+    let urlPathRaw:String = "http://localhost/indexEvents.php?userID="
     weak var delegate: EventModelProtocal!
     var data : NSMutableData = NSMutableData()
     
     func getJSON() {
+        let urlPath = urlPathRaw
         let url: NSURL = NSURL(string: urlPath)!
         var session: NSURLSession!
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -65,21 +66,27 @@ class EventModel: NSObject, NSURLSessionDelegate {
             
             jsonElement = jsonResult[i] as! NSDictionary
             
-            let event = EventItem(location: "", startDate: NSDate(), duration: 0, eventDesc: "", cost: 0, numOrders: 0)
+            let event = EventItem(eventID: 0, userID:0,eventLocation: "", expireDate: NSDate(), eventDescription: "", numOrders: 0, orderLimit: 0)
+            
+            let dateFormatter = NSDateFormatter();
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             
             //the following insures none of the JsonElement values are nil through optional binding
-            if let eventLoc = jsonElement["eventLocation"] as? String,
-                let duration = Int((jsonElement["duration"] as? String)!),
-                let eventDesc = jsonElement["eventDescription"] as? String,
-                let cost = Int((jsonElement["cost"] as? String)!),
-                let numOrders = Int((jsonElement["numOrders"] as? String)!) {
+            if let eventID = Int((jsonElement["eventID"] as? String)!),
+                let userID = Int((jsonElement["userID"] as? String)!),
+                let eventLocation = jsonElement["eventLocation"] as? String,
+                let expireDate = dateFormatter.dateFromString((jsonElement["expireDate"] as? String)!),
+                let eventDescription = jsonElement["eventDescription"] as? String,
+                let numOrders = Int((jsonElement["numOrders?"] as? String)!),
+                let orderLimit = Int((jsonElement["orderLimit"] as? String)!) {
                 
-                event.eventLocation = eventLoc
-                event.duration = NSInteger(duration)
-                event.eventDescription = eventDesc
-                event.cost = cost
+                event.eventID = eventID
+                event.userID = userID
+                event.eventLocation = eventLocation
+                event.expireDate = expireDate
+                event.eventDescription = eventDescription
                 event.numOrders = numOrders
-                
+                event.orderLimit = orderLimit
             }
             
             events.addObject(event)

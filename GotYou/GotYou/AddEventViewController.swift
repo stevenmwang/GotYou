@@ -38,7 +38,7 @@ class AddEventViewController: UIViewController {
             let eventLoc = location.text ?? ""
             let eventStartDate = startDate.date
             
-            event = EventItem(location: eventLoc, startDate: eventStartDate, duration: 0, eventDesc: eventDesc, cost:0, numOrders:0 )
+            event = EventItem(eventID: 1, userID: 1, eventLocation: eventLoc, expireDate: eventStartDate, eventDescription: eventDesc, numOrders: 1, orderLimit: 1)
             
         }
     }

@@ -16,6 +16,10 @@ class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDel
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
+            print(FBSDKAccessToken.currentAccessToken().userID);
+            let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("EventTableViewController") as! EventTableViewController
+            secondViewController.userID = Int(FBSDKAccessToken.currentAccessToken().userID)!
+            self.navigationController!.pushViewController(secondViewController, animated: true)
         }
         else
         {
@@ -46,7 +50,9 @@ class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDel
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
-                // Do work
+                let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("EventTableViewController") as! EventTableViewController
+                
+                self.navigationController!.pushViewController(secondViewController, animated: true)
             }
         }
     }
