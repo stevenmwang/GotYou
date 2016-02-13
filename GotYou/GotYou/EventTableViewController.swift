@@ -13,7 +13,7 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
 
     @IBOutlet weak var listTableView: UITableView!
     var events = [EventItem]()
-    var userID: Int = 0
+    var userID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

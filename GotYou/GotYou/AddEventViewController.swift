@@ -43,7 +43,7 @@ class AddEventViewController: UIViewController {
             let currentNumOrders = Int(numOrders.text ?? "")!
             
             
-            event = EventItem(eventID: 1, userID: 1, eventLocation: eventLoc, expireDate: eventStartDate, eventDescription: eventDesc, numOrders: currentNumOrders, orderLimit: maxOrders)
+            event = EventItem(eventID: "", userID: "", eventLocation: eventLoc, expireDate: eventStartDate, eventDescription: eventDesc, numOrders: currentNumOrders, orderLimit: maxOrders)
             
         }
     }

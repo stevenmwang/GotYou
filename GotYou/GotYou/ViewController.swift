@@ -10,16 +10,17 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDelegate  {
 
+    var userID:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
-            print(FBSDKAccessToken.currentAccessToken().userID);
-            let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
-            secondViewController.userID = Int(FBSDKAccessToken.currentAccessToken().userID)!
-            self.navigationController!.pushViewController(secondViewController, animated: true)
+            userID = FBSDKAccessToken.currentAccessToken().userID
+//            let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
+//            //secondViewController.userID = Int(FBSDKAccessToken.currentAccessToken().userID)!
+//            self.navigationController!.pushViewController(secondViewController, animated: true)
         }
         else
         {
@@ -59,6 +60,11 @@ class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDel
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("User Logged Out")
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        let VC = segue.destinationViewController as! TabBarController
+        VC.userID = userID
     }
     
 

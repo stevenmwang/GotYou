@@ -16,9 +16,9 @@ class EventModel: NSObject, NSURLSessionDelegate {
     var urlPathTableIndex:String = "http://localhost/indexEvents.php?userID="
     weak var delegate: EventModelProtocal!
     var data : NSMutableData = NSMutableData()
-    var userID = -1
+    var userID = ""
     
-    init(userID: Int) {
+    init(userID: String) {
         self.userID = userID
     }
     
@@ -78,18 +78,18 @@ class EventModel: NSObject, NSURLSessionDelegate {
             
             jsonElement = jsonResult[i] as! NSDictionary
             
-            let event = EventItem(eventID: 0, userID:0,eventLocation: "", expireDate: NSDate(), eventDescription: "", numOrders: 0, orderLimit: 0)
+            let event = EventItem(eventID: "", userID:"",eventLocation: "", expireDate: NSDate(), eventDescription: "", numOrders: 0, orderLimit: 0)
             
             let dateFormatter = NSDateFormatter();
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
             
             //the following insures none of the JsonElement values are nil through optional binding
-            if let eventID = Int((jsonElement["eventID"] as? String)!),
-                let userID = Double((jsonElement["userID"] as? String)!),
+            if let eventID = jsonElement["eventID"] as? String,
+                let userID = jsonElement["userID"] as? String,
                 let eventLocation = jsonElement["eventLocation"] as? String,
                 let expireDate = dateFormatter.dateFromString((jsonElement["expireDate"] as? String)!),
                 let eventDescription = jsonElement["eventDescription"] as? String,
-                let numOrders = Int((jsonElement["numOrders?"] as? String)!),
+                let numOrders = Int((jsonElement["numOrders"] as? String)!),
                 let orderLimit = Int((jsonElement["orderLimit"] as? String)!) {
                 
                 event.eventID = eventID

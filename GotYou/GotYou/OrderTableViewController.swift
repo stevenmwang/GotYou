@@ -12,7 +12,7 @@ class OrderTableViewController: UITableViewController, EventModelProtocal {
 
     @IBOutlet weak var listTableView: UITableView!
     var orders = [OrderClass]()
-    var userID: Int = 0
+    var userID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class OrderTableViewController: UITableViewController, EventModelProtocal {
         if (orders.count == 0) {
             let eventModel = EventModel(userID: userID)
             eventModel.delegate = self
-            eventModel.getJSON()
+            eventModel.getJSON(String(userID))
         }
         
         

@@ -10,15 +10,15 @@
 
 import UIKit
 class EventItem: NSObject {
-    var eventID: Int
-    var userID: Double
+    var eventID: String
+    var userID: String
     var eventLocation: String
     var expireDate: NSDate
     var eventDescription: String
     var numOrders: Int
     var orderLimit: Int
     
-    init (eventID: Int, userID: Double, eventLocation: String, expireDate: NSDate,
+    init (eventID: String, userID: String, eventLocation: String, expireDate: NSDate,
         eventDescription: String, numOrders: Int, orderLimit: Int) {
             self.eventID = eventID
             self.userID = userID
