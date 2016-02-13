@@ -62,6 +62,7 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
 //        cell.duration.text = String(event.duration)
 //        cell.cost.text = String(event.cost)
         cell.numOrders.text = String(event.numOrders)
+        cell.maxOrders.text = String(event.orderLimit)
 
         
         return cell

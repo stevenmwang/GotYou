@@ -15,6 +15,8 @@ class AddEventViewController: UIViewController {
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var endDate: UIDatePicker!
     @IBOutlet weak var startDate: UIDatePicker!
+    @IBOutlet weak var orderLimit: UITextField!
+    @IBOutlet weak var numOrders: UITextField!
     
     //MARK: Variables
     var event:EventItem!
@@ -37,8 +39,11 @@ class AddEventViewController: UIViewController {
             let eventDesc = eventDescription.text ?? ""
             let eventLoc = location.text ?? ""
             let eventStartDate = startDate.date
+            let maxOrders = Int(orderLimit.text ?? "")!
+            let currentNumOrders = Int(numOrders.text ?? "")!
             
-            event = EventItem(eventID: 1, userID: 1, eventLocation: eventLoc, expireDate: eventStartDate, eventDescription: eventDesc, numOrders: 1, orderLimit: 1)
+            
+            event = EventItem(eventID: 1, userID: 1, eventLocation: eventLoc, expireDate: eventStartDate, eventDescription: eventDesc, numOrders: currentNumOrders, orderLimit: maxOrders)
             
         }
     }
