@@ -19,7 +19,7 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
         super.viewDidLoad()
         
         if (events.count == 0) {
-            let eventModel = EventModel()
+            let eventModel = EventModel(userID: userID)
             eventModel.delegate = self
             eventModel.getJSON()
         }

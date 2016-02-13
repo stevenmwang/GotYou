@@ -13,12 +13,17 @@ protocol EventModelProtocal: class {
 }
 
 class EventModel: NSObject, NSURLSessionDelegate {
-    let urlPathRaw:String = "http://localhost/indexEvents.php?userID="
+    var urlPathRaw:String = "http://localhost/indexEvents.php?userID="
     weak var delegate: EventModelProtocal!
     var data : NSMutableData = NSMutableData()
+    var userID = -1
+    
+    init(userID: Int) {
+        self.userID = userID
+    }
     
     func getJSON() {
-        let urlPath = urlPathRaw
+        let urlPath = urlPathRaw + String(userID)
         let url: NSURL = NSURL(string: urlPath)!
         var session: NSURLSession!
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -73,7 +78,7 @@ class EventModel: NSObject, NSURLSessionDelegate {
             
             //the following insures none of the JsonElement values are nil through optional binding
             if let eventID = Int((jsonElement["eventID"] as? String)!),
-                let userID = Int((jsonElement["userID"] as? String)!),
+                let userID = Double((jsonElement["userID"] as? String)!),
                 let eventLocation = jsonElement["eventLocation"] as? String,
                 let expireDate = dateFormatter.dateFromString((jsonElement["expireDate"] as? String)!),
                 let eventDescription = jsonElement["eventDescription"] as? String,
