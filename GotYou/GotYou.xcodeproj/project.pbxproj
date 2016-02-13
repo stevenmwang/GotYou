@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81437F31C6DF53F00A9C201 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81437F01C6DF53F00A9C201 /* FBSDKCoreKit.framework */; };
+		F81437F41C6DF53F00A9C201 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81437F11C6DF53F00A9C201 /* FBSDKLoginKit.framework */; };
+		F81437F51C6DF53F00A9C201 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81437F21C6DF53F00A9C201 /* FBSDKShareKit.framework */; };
 		F8D350391C6AE20D00152BFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D350381C6AE20D00152BFD /* AppDelegate.swift */; };
 		F8D3503B1C6AE20D00152BFD /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */; };
 		F8D3503E1C6AE20E00152BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D3503C1C6AE20E00152BFD /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F81437F01C6DF53F00A9C201 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../../../../../Downloads/FacebookSDKs-iOS-20160210/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		F81437F11C6DF53F00A9C201 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../../../../Downloads/FacebookSDKs-iOS-20160210/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		F81437F21C6DF53F00A9C201 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../../../../../Downloads/FacebookSDKs-iOS-20160210/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		F8D350351C6AE20D00152BFD /* GotYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GotYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D350381C6AE20D00152BFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81437F41C6DF53F00A9C201 /* FBSDKLoginKit.framework in Frameworks */,
+				F81437F31C6DF53F00A9C201 /* FBSDKCoreKit.framework in Frameworks */,
+				F81437F51C6DF53F00A9C201 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,9 +91,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F81437F61C6ECA2300A9C201 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F81437F01C6DF53F00A9C201 /* FBSDKCoreKit.framework */,
+				F81437F11C6DF53F00A9C201 /* FBSDKLoginKit.framework */,
+				F81437F21C6DF53F00A9C201 /* FBSDKShareKit.framework */,
+			);
+			name = Frameworks;
+			path = GotYou;
+			sourceTree = "<group>";
+		};
 		F8D3502C1C6AE20D00152BFD = {
 			isa = PBXGroup;
 			children = (
+				F81437F61C6ECA2300A9C201 /* Frameworks */,
 				F8D350371C6AE20D00152BFD /* GotYou */,
 				F8D3504C1C6AE20E00152BFD /* GotYouTests */,
 				F8D350571C6AE20E00152BFD /* GotYouUITests */,
@@ -500,6 +521,7 @@
 				F8D3505F1C6AE20E00152BFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8D350601C6AE20E00152BFD /* Build configuration list for PBXNativeTarget "GotYouTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +530,7 @@
 				F8D350621C6AE20E00152BFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8D350631C6AE20E00152BFD /* Build configuration list for PBXNativeTarget "GotYouUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +539,7 @@
 				F8D350651C6AE20E00152BFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
