@@ -21,7 +21,7 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
         if (events.count == 0) {
             let eventModel = EventModel(userID: userID)
             eventModel.delegate = self
-            eventModel.getJSON()
+            eventModel.getJSON("tableIndex")
         }
         
         
@@ -56,14 +56,15 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
         let event = events[indexPath.row]
         
+        let dateForm = NSDateFormatter()
+        dateForm.dateFormat = "hh:mm"
+        let dateString = dateForm.stringFromDate(event.expireDate)
+        let orderDis = String(event.numOrders) + "/" + String(event.orderLimit)
         
         cell.location.text = event.eventLocation
         cell.eventDesc.text = event.eventDescription
-//        cell.duration.text = String(event.duration)
-//        cell.cost.text = String(event.cost)
-        cell.numOrders.text = String(event.numOrders)
-        cell.maxOrders.text = String(event.orderLimit)
-
+        cell.numOrders.text = orderDis
+        cell.timeEnd.text = dateString
         
         return cell
     }

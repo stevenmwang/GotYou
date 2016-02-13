@@ -13,7 +13,7 @@ protocol EventModelProtocal: class {
 }
 
 class EventModel: NSObject, NSURLSessionDelegate {
-    var urlPathRaw:String = "http://localhost/indexEvents.php?userID="
+    var urlPathTableIndex:String = "http://localhost/indexEvents.php?userID="
     weak var delegate: EventModelProtocal!
     var data : NSMutableData = NSMutableData()
     var userID = -1
@@ -22,8 +22,15 @@ class EventModel: NSObject, NSURLSessionDelegate {
         self.userID = userID
     }
     
-    func getJSON() {
-        let urlPath = urlPathRaw + String(userID)
+    func getJSON(whichPHP: String) {
+        var urlPath:String = ""
+        switch whichPHP {
+        case "tableIndex" :
+            urlPath = urlPathTableIndex + String(userID)
+        default :
+            break;
+            
+        }
         let url: NSURL = NSURL(string: urlPath)!
         var session: NSURLSession!
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()

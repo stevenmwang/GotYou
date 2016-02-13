@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDel
         {
             // User is already logged in, do work such as go to next view controller.
             print(FBSDKAccessToken.currentAccessToken().userID);
-            let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("EventTableViewController") as! EventTableViewController
+            let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
             secondViewController.userID = Int(FBSDKAccessToken.currentAccessToken().userID)!
             self.navigationController!.pushViewController(secondViewController, animated: true)
         }
