@@ -3,8 +3,7 @@
 //  GotYou
 //
 //  Created by Steven Wang on 2/9/16.
-//  BRANDON FINISHES HERE v
-//  first                                   last
+//  Updated today
 //  Copyright © 2016 Stanford. All rights reserved.
 //
 
