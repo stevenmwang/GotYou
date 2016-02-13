@@ -16,7 +16,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var cost: UILabel!
     @IBOutlet weak var numOrders: UILabel!
-    
+    @IBOutlet weak var maxOrders: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

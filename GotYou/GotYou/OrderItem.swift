@@ -9,18 +9,22 @@
 import UIKit
 
 class OrderClass: NSObject {
-    var orderID: String
+    var orderID: Int
+    var order: String
     var userID: Int
     var eventID: Int
     var quantity: Int
-    var cost: Double
+    var verified: Bool
+    var price: Double
     
-    init (orderID: String, userID: Int, eventID: Int,
-        quantity: Int, cost: Double) {
+    init (orderID: Int, order: String, userID: Int, eventID: Int,
+        quantity: Int, verified: Bool, price: Double) {
             self.orderID = orderID
+            self.order = order
             self.userID = userID
             self.eventID = eventID
             self.quantity = quantity
-            self.cost = cost
+            self.verified = verified
+            self.price = price
     }
 }
