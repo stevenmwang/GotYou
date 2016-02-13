@@ -46,7 +46,7 @@
 		F81437F11C6DF53F00A9C201 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../../../../Downloads/FacebookSDKs-iOS-20160210/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		F81437F21C6DF53F00A9C201 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../../../../../Downloads/FacebookSDKs-iOS-20160210/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		F81437F71C6ECE2300A9C201 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F81437F91C6ECE6A00A9C201 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F81438041C6F24C800A9C201 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F8D350351C6AE20D00152BFD /* GotYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GotYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D350381C6AE20D00152BFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +108,7 @@
 		F8D3502C1C6AE20D00152BFD = {
 			isa = PBXGroup;
 			children = (
+				F81438041C6F24C800A9C201 /* Bridging-Header.h */,
 				F81437F61C6ECA2300A9C201 /* Frameworks */,
 				F8D350371C6AE20D00152BFD /* GotYou */,
 				F8D3504C1C6AE20E00152BFD /* GotYouTests */,
@@ -133,7 +134,6 @@
 				F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */,
 				F8D3503C1C6AE20E00152BFD /* Main.storyboard */,
 				F81437F71C6ECE2300A9C201 /* ViewController.swift */,
-				F81437F91C6ECE6A00A9C201 /* Bridging-Header.h */,
 				F8D350681C6C527800152BFD /* EventTableViewController.swift */,
 				F8D3506C1C6C717600152BFD /* EventTableViewCell.swift */,
 				F8D3506A1C6C529200152BFD /* EventModel.swift */,
@@ -442,11 +442,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = /Users/stevenwang/Documents/FacebookSDK;
 				INFOPLIST_FILE = GotYou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Steven.GotYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -454,11 +455,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = /Users/stevenwang/Documents/FacebookSDK;
 				INFOPLIST_FILE = GotYou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Steven.GotYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
 		};
