@@ -13,10 +13,9 @@ class AddEventViewController: UIViewController {
     
     @IBOutlet weak var eventDescription: UITextView!
     @IBOutlet weak var location: UITextField!
-    @IBOutlet weak var endDate: UIDatePicker!
-    @IBOutlet weak var startDate: UIDatePicker!
+    @IBOutlet weak var duration: UITextField!
     @IBOutlet weak var orderLimit: UITextField!
-    @IBOutlet weak var numOrders: UITextField!
+
     
     //MARK: Variables
     var event:EventItem!

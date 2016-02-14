@@ -9,15 +9,15 @@
 import UIKit
 
 class OrderClass: NSObject {
-    var orderID: Int
+    var orderID: String
     var order: String
-    var userID: Int
-    var eventID: Int
+    var userID: String
+    var eventID: String
     var quantity: Int
     var verified: Bool
     var price: Double
     
-    init (orderID: Int, order: String, userID: Int, eventID: Int,
+    init (orderID: String, order: String, userID: String, eventID: String,
         quantity: Int, verified: Bool, price: Double) {
             self.orderID = orderID
             self.order = order

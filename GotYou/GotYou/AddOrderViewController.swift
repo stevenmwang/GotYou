@@ -37,13 +37,13 @@ class AddOrderViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (saveButton === sender) {
-            let orderRequest = request.text ?? ""
-            let orderVerified = (ordVer.text ?? "") != "nil"
-            let orderQuantity = Int(ordQuant.text ?? "")
-            let orderCost = Double(price.text ?? "")
-            
-            order = OrderClass(orderID: 1, order: orderRequest, userID: 1, eventID: 1, quantity: orderQuantity!, verified: orderVerified, price: orderCost!)
-            
+//            let orderRequest = request.text ?? ""
+//            let orderVerified = (ordVer.text ?? "") != "nil"
+//            let orderQuantity = Int(ordQuant.text ?? "")
+//            let orderCost = Double(price.text ?? "")
+//            
+//            order = OrderClass(orderID: "1", order: orderRequest, userID: 1, eventID: 1, quantity: orderQuantity!, verified: orderVerified, price: orderCost!)
+//            
             
             
         }

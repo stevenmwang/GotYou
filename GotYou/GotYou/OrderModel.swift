@@ -8,21 +8,20 @@
 
 import Foundation
 
-protocol EventModelProtocal: class {
+protocol OrderModelProtocal: class {
     func itemsDownloaded(items: NSArray)
 }
 
-class EventModel: NSObject, NSURLSessionDelegate {
-    var urlPathTableIndex:String = "http://localhost/indexEvents.php?userID="
+class OrderModel: NSObject, NSURLSessionDelegate {
     var urlPathDisplayAllOrders:String = "http://localhost/displayAllOrders.php?eventID="
-    var urlPathDisplayYourOrders:String = "http://localhost/idisplayYourOrders.php?userID="
+    var urlPathDisplayYourOrders:String = "http://localhost/displayYourOrders.php?userID="
     weak var delegate: EventModelProtocal!
     var data : NSMutableData = NSMutableData()
     var userID = ""
     var eventID = ""
     
-    init(userID: String) {
-        self.userID = userID
+    init(eventID: String) {
+        self.eventID = eventID
     }
     
     init(userID: String, eventID: String) {
@@ -33,12 +32,10 @@ class EventModel: NSObject, NSURLSessionDelegate {
     func getJSON(whichPHP: String) {
         var urlPath:String = ""
         switch whichPHP {
-        case "tableIndex" :
-            urlPath = urlPathTableIndex + String(userID)
         case "displayAllOrders" :
             urlPath = urlPathDisplayAllOrders + String(eventID)
         case "displayYourOrders" :
-            urlPath = urlPathDisplayYourOrders + String(userID) + "eventID=" + String(eventID)
+            urlPath = urlPathDisplayYourOrders + String(userID) + "&eventID=" + String(eventID)
         default :
             break;
             
@@ -83,47 +80,39 @@ class EventModel: NSObject, NSURLSessionDelegate {
         }
         
         var jsonElement: NSDictionary = NSDictionary()
-        let events: NSMutableArray = NSMutableArray()
+        let orders: NSMutableArray = NSMutableArray()
         
         for(var i = 0; i < jsonResult.count; i++)
         {
             
             jsonElement = jsonResult[i] as! NSDictionary
             
-            let event = EventItem(eventID: "", userID:"",eventLocation: "", expireDate: NSDate(), eventDescription: "", numOrders: 0, orderLimit: 0)
-            
-            let dateFormatter = NSDateFormatter();
-            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
             
             //the following insures none of the JsonElement values are nil through optional binding
-            if let eventID = jsonElement["eventID"] as? String,
+            if let orderID = jsonElement["id"] as? String,
+                let eventID = jsonElement["eventID"] as? String,
                 let userID = jsonElement["userID"] as? String,
-                let eventLocation = jsonElement["eventLocation"] as? String,
-                let expireDate = dateFormatter.dateFromString((jsonElement["expireDate"] as? String)!),
-                let eventDescription = jsonElement["eventDescription"] as? String,
-                let numOrders = Int((jsonElement["numOrders"] as? String)!),
-                let orderLimit = Int((jsonElement["orderLimit"] as? String)!) {
-                
-                event.eventID = eventID
-                event.userID = userID
-                event.eventLocation = eventLocation
-                event.expireDate = expireDate
-                event.eventDescription = eventDescription
-                event.numOrders = numOrders
-                event.orderLimit = orderLimit
+                let order = jsonElement["order"] as? String,
+                let price = Double((jsonElement["price"] as? String)!),
+                let quantity = Int((jsonElement["quantity"] as? String)!) {
+                    
+                    let verified = (jsonElement["verified"] as? NSString)?.boolValue
+                    let event = OrderClass(orderID:orderID, order: order, userID:userID, eventID: eventID, quantity:quantity, verified: verified!, price: price)
+                    orders.addObject(event)
+
             }
             
-            events.addObject(event)
+            
             
         }
         
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             
-            self.delegate.itemsDownloaded(events)
+            self.delegate.itemsDownloaded(orders)
             
         })
     }
     
-
-
+    
+    
 }

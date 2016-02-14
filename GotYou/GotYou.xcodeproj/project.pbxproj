@@ -13,9 +13,12 @@
 		F81437F81C6ECE2300A9C201 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81437F71C6ECE2300A9C201 /* ViewController.swift */; };
 		F81438061C6F637400A9C201 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81438051C6F637400A9C201 /* OrderItem.swift */; };
 		F81438101C6F708A00A9C201 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814380D1C6F708A00A9C201 /* AddOrderViewController.swift */; };
-		F81438111C6F708A00A9C201 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814380E1C6F708A00A9C201 /* OrderTableViewCell.swift */; };
-		F81438121C6F708A00A9C201 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814380F1C6F708A00A9C201 /* OrderTableViewController.swift */; };
+		F81438111C6F708A00A9C201 /* AllOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814380E1C6F708A00A9C201 /* AllOrderTableViewCell.swift */; };
 		F814381B1C6FC85800A9C201 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F814381A1C6FC85800A9C201 /* TabBarController.swift */; };
+		F86C161E1C6FFF6100165B1A /* UserEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C161D1C6FFF6100165B1A /* UserEventTableViewController.swift */; };
+		F86C16201C6FFF8000165B1A /* UserOtherEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C161F1C6FFF8000165B1A /* UserOtherEventTableViewController.swift */; };
+		F86C16221C70082C00165B1A /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16211C70082C00165B1A /* OrderModel.swift */; };
+		F86C16241C70163400165B1A /* OtherOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16231C70163400165B1A /* OtherOrderTableViewCell.swift */; };
 		F8D350391C6AE20D00152BFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D350381C6AE20D00152BFD /* AppDelegate.swift */; };
 		F8D3503B1C6AE20D00152BFD /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */; };
 		F8D3503E1C6AE20E00152BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D3503C1C6AE20E00152BFD /* Main.storyboard */; };
@@ -54,9 +57,12 @@
 		F81438041C6F24C800A9C201 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F81438051C6F637400A9C201 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		F814380D1C6F708A00A9C201 /* AddOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
-		F814380E1C6F708A00A9C201 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
-		F814380F1C6F708A00A9C201 /* OrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		F814380E1C6F708A00A9C201 /* AllOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllOrderTableViewCell.swift; sourceTree = "<group>"; };
 		F814381A1C6FC85800A9C201 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F86C161D1C6FFF6100165B1A /* UserEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEventTableViewController.swift; sourceTree = "<group>"; };
+		F86C161F1C6FFF8000165B1A /* UserOtherEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOtherEventTableViewController.swift; sourceTree = "<group>"; };
+		F86C16211C70082C00165B1A /* OrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		F86C16231C70163400165B1A /* OtherOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherOrderTableViewCell.swift; sourceTree = "<group>"; };
 		F8D350351C6AE20D00152BFD /* GotYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GotYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D350381C6AE20D00152BFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -140,10 +146,12 @@
 		F8D350371C6AE20D00152BFD /* GotYou */ = {
 			isa = PBXGroup;
 			children = (
+				F86C161F1C6FFF8000165B1A /* UserOtherEventTableViewController.swift */,
+				F86C161D1C6FFF6100165B1A /* UserEventTableViewController.swift */,
 				F814381A1C6FC85800A9C201 /* TabBarController.swift */,
 				F814380D1C6F708A00A9C201 /* AddOrderViewController.swift */,
-				F814380E1C6F708A00A9C201 /* OrderTableViewCell.swift */,
-				F814380F1C6F708A00A9C201 /* OrderTableViewController.swift */,
+				F814380E1C6F708A00A9C201 /* AllOrderTableViewCell.swift */,
+				F86C16231C70163400165B1A /* OtherOrderTableViewCell.swift */,
 				F81438051C6F637400A9C201 /* OrderItem.swift */,
 				F8D350381C6AE20D00152BFD /* AppDelegate.swift */,
 				F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */,
@@ -152,6 +160,7 @@
 				F8D350681C6C527800152BFD /* EventTableViewController.swift */,
 				F8D3506C1C6C717600152BFD /* EventTableViewCell.swift */,
 				F8D3506A1C6C529200152BFD /* EventModel.swift */,
+				F86C16211C70082C00165B1A /* OrderModel.swift */,
 				F8D350661C6AE52200152BFD /* EventItem.swift */,
 				F8D3503F1C6AE20E00152BFD /* Assets.xcassets */,
 				F8D350411C6AE20E00152BFD /* LaunchScreen.storyboard */,
@@ -313,13 +322,16 @@
 				F8D3503B1C6AE20D00152BFD /* AddEventViewController.swift in Sources */,
 				F81438101C6F708A00A9C201 /* AddOrderViewController.swift in Sources */,
 				F8D350391C6AE20D00152BFD /* AppDelegate.swift in Sources */,
+				F86C16201C6FFF8000165B1A /* UserOtherEventTableViewController.swift in Sources */,
 				F8D350691C6C527900152BFD /* EventTableViewController.swift in Sources */,
 				F81437F81C6ECE2300A9C201 /* ViewController.swift in Sources */,
-				F81438111C6F708A00A9C201 /* OrderTableViewCell.swift in Sources */,
+				F86C16221C70082C00165B1A /* OrderModel.swift in Sources */,
+				F86C161E1C6FFF6100165B1A /* UserEventTableViewController.swift in Sources */,
+				F86C16241C70163400165B1A /* OtherOrderTableViewCell.swift in Sources */,
+				F81438111C6F708A00A9C201 /* AllOrderTableViewCell.swift in Sources */,
 				F81438061C6F637400A9C201 /* OrderItem.swift in Sources */,
 				F8D3506B1C6C529200152BFD /* EventModel.swift in Sources */,
 				F814381B1C6FC85800A9C201 /* TabBarController.swift in Sources */,
-				F81438121C6F708A00A9C201 /* OrderTableViewController.swift in Sources */,
 				F8D350671C6AE52200152BFD /* EventItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

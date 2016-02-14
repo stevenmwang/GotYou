@@ -1,36 +1,30 @@
 //
-//  EventTableViewController.swift
+//  UserEventTableViewController.swift
 //  GotYou
 //
-//  Created by Steven Wang on 2/10/16.
+//  Created by Steven Wang on 2/13/16.
 //  Copyright © 2016 Stanford. All rights reserved.
-//  asdf
+//
 
 import UIKit
 
-class EventTableViewController: UITableViewController, EventModelProtocal {
-
-
-    @IBOutlet weak var listTableView: UITableView!
-    var events = [EventItem]()
-    var userID: String = ""
-    var eventID = ""
+class UserEventTableViewController: UITableViewController, EventModelProtocal {
+    var eventID: String = ""
+    var orders = [OrderClass]()
+    
+    @IBOutlet var listTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if (events.count == 0) {
-            let eventModel = EventModel(userID: userID)
-            eventModel.delegate = self
-            eventModel.getJSON("tableIndex")
-        }
-        
-        
+
+        let orderModel = OrderModel(eventID: eventID)
+        orderModel.delegate = self
+        orderModel.getJSON("displayAllOrders")
     }
     
     func itemsDownloaded(items: NSArray) {
         
-        events = items as! [EventItem]
+        orders = items as! [OrderClass]
         self.listTableView.reloadData()
     }
 
@@ -48,56 +42,25 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return events.count
+        return orders.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "EventTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
-        let event = events[indexPath.row]
+        let cellIdentifier = "AllOrderTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AllOrderTableViewCell
+        let order = orders[indexPath.row]
         
-        let dateForm = NSDateFormatter()
-        dateForm.dateFormat = "hh:mm"
-        let dateString = dateForm.stringFromDate(event.expireDate)
-        let orderDis = String(event.numOrders) + "/" + String(event.orderLimit)
-        
-        cell.location.text = event.eventLocation
-        cell.eventDesc.text = event.eventDescription
-        cell.numOrders.text = orderDis
-        cell.timeEnd.text = dateString
+        cell.order.text = order.order
+        cell.quantity.text = String(order.quantity)
+        cell.price.text = String(order.price)
         
         return cell
     }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let event = events[indexPath.row]
-        eventID = event.eventID
-        if (event.userID == userID) {
-            performSegueWithIdentifier("UserEventSegue", sender: self)
-        } else {
-            performSegueWithIdentifier("OrderSegue", sender: self)
-        }
-    }
     
     @IBAction func unwindToEventList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? AddEventViewController, event = sourceViewController.event {
-            // Add a new meal.
-            let newIndexPath = NSIndexPath(forRow: events.count, inSection: 0)
-            events.append(event)
-            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
-        }
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "UserEventSegue") {
-            let desVC:UserEventTableViewController = (segue.destinationViewController as! UINavigationController).viewControllers.first as! UserEventTableViewController
-            desVC.eventID = eventID
-        } else if (segue.identifier == "OrderSegue") {
-            let desVC:UserOtherEventTableViewController = (segue.destinationViewController as! UINavigationController).viewControllers.first as! UserOtherEventTableViewController
-            desVC.userID = userID
-            desVC.eventID = eventID
-        }
-    }
+
 
     /*
     // Override to support conditional editing of the table view.
