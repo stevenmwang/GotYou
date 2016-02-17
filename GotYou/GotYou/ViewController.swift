@@ -10,17 +10,44 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDelegate  {
 
+    
+    @IBOutlet weak var profImage: UIImageView!
+    
     var userID:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let pictureRequest = FBSDKGraphRequest(graphPath: "me/picture?type=large&redirect=false", parameters: nil)
+        pictureRequest.startWithCompletionHandler({
+            (connection, result, error: NSError!) -> Void in
+            if error == nil {
+                let resultDict = result as! NSDictionary
+                let data : NSDictionary = resultDict["data"] as! NSDictionary
+                let dataURL:String = data["url"] as! String
+                let url = NSURL(string: dataURL)
+                let profData = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+                self.profImage.image = UIImage(data: profData!)
+            }
+        })
 
+        
+        
+        
+        
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-            // User is already logged in, do work such as go to next view controller.
-            userID = FBSDKAccessToken.currentAccessToken().userID
-//            let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("TabBarController") as! TabBarController
-//            //secondViewController.userID = Int(FBSDKAccessToken.currentAccessToken().userID)!
-//            self.navigationController!.pushViewController(secondViewController, animated: true)
+//            var fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
+//            fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
+//                var resultDict = result as! NSDictionary
+//                print(resultDict)
+//                var data : NSArray = resultDict["data"] as! NSArray
+//                
+//                for i in 0...data.count-1 {
+//                    let valueDict : NSDictionary = data[i] as! NSDictionary
+//                    let id = valueDict.objectForKey("id") as! String
+//                    print("the id value is \(id)")
+//                }
+//            }
         }
         else
         {

@@ -121,6 +121,48 @@
 			path = GotYou;
 			sourceTree = "<group>";
 		};
+		F86C16251C72FD7100165B1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8D3506A1C6C529200152BFD /* EventModel.swift */,
+				F86C16211C70082C00165B1A /* OrderModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F86C16261C72FD7A00165B1A /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				F81438051C6F637400A9C201 /* OrderItem.swift */,
+				F8D350661C6AE52200152BFD /* EventItem.swift */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
+		F86C16271C72FD8700165B1A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F814380D1C6F708A00A9C201 /* AddOrderViewController.swift */,
+				F814381A1C6FC85800A9C201 /* TabBarController.swift */,
+				F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */,
+				F81437F71C6ECE2300A9C201 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F86C16281C72FD9D00165B1A /* Table View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F86C161F1C6FFF8000165B1A /* UserOtherEventTableViewController.swift */,
+				F86C161D1C6FFF6100165B1A /* UserEventTableViewController.swift */,
+				F814380E1C6F708A00A9C201 /* AllOrderTableViewCell.swift */,
+				F86C16231C70163400165B1A /* OtherOrderTableViewCell.swift */,
+				F8D350681C6C527800152BFD /* EventTableViewController.swift */,
+				F8D3506C1C6C717600152BFD /* EventTableViewCell.swift */,
+			);
+			name = "Table View Controllers";
+			sourceTree = "<group>";
+		};
 		F8D3502C1C6AE20D00152BFD = {
 			isa = PBXGroup;
 			children = (
@@ -146,22 +188,12 @@
 		F8D350371C6AE20D00152BFD /* GotYou */ = {
 			isa = PBXGroup;
 			children = (
-				F86C161F1C6FFF8000165B1A /* UserOtherEventTableViewController.swift */,
-				F86C161D1C6FFF6100165B1A /* UserEventTableViewController.swift */,
-				F814381A1C6FC85800A9C201 /* TabBarController.swift */,
-				F814380D1C6F708A00A9C201 /* AddOrderViewController.swift */,
-				F814380E1C6F708A00A9C201 /* AllOrderTableViewCell.swift */,
-				F86C16231C70163400165B1A /* OtherOrderTableViewCell.swift */,
-				F81438051C6F637400A9C201 /* OrderItem.swift */,
-				F8D350381C6AE20D00152BFD /* AppDelegate.swift */,
-				F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */,
 				F8D3503C1C6AE20E00152BFD /* Main.storyboard */,
-				F81437F71C6ECE2300A9C201 /* ViewController.swift */,
-				F8D350681C6C527800152BFD /* EventTableViewController.swift */,
-				F8D3506C1C6C717600152BFD /* EventTableViewCell.swift */,
-				F8D3506A1C6C529200152BFD /* EventModel.swift */,
-				F86C16211C70082C00165B1A /* OrderModel.swift */,
-				F8D350661C6AE52200152BFD /* EventItem.swift */,
+				F86C16281C72FD9D00165B1A /* Table View Controllers */,
+				F86C16261C72FD7A00165B1A /* Items */,
+				F8D350381C6AE20D00152BFD /* AppDelegate.swift */,
+				F86C16271C72FD8700165B1A /* View Controllers */,
+				F86C16251C72FD7100165B1A /* Models */,
 				F8D3503F1C6AE20E00152BFD /* Assets.xcassets */,
 				F8D350411C6AE20E00152BFD /* LaunchScreen.storyboard */,
 				F8D350441C6AE20E00152BFD /* Info.plist */,

@@ -18,6 +18,7 @@ class EventTableViewController: UITableViewController, EventModelProtocal {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         if (events.count == 0) {
             let eventModel = EventModel(userID: userID)

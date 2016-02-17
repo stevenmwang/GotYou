@@ -35,14 +35,13 @@ class AddEventViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (saveButton === sender) {
+            let startDate = NSDate()
             let eventDesc = eventDescription.text ?? ""
             let eventLoc = location.text ?? ""
-            let eventStartDate = startDate.date
-            let maxOrders = Int(orderLimit.text ?? "")!
-            let currentNumOrders = Int(numOrders.text ?? "")!
+            let orderLim = Int(orderLimit.text ?? "")!
+            let date = startDate.dateByAddingTimeInterval(5.0 * 60.0)
             
-            
-            event = EventItem(eventID: "", userID: "", eventLocation: eventLoc, expireDate: eventStartDate, eventDescription: eventDesc, numOrders: currentNumOrders, orderLimit: maxOrders)
+            event = EventItem(eventID: "", userID: "", eventLocation: eventLoc, expireDate: date, eventDescription: eventDesc, numOrders: 0, orderLimit: orderLim)
             
         }
     }
