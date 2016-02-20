@@ -15,11 +15,14 @@ protocol EventModelProtocal: class {
 class EventModel: NSObject, NSURLSessionDelegate {
     var urlPathTableIndex:String = "http://localhost/indexEvents.php?userID="
     var urlPathDisplayAllOrders:String = "http://localhost/displayAllOrders.php?eventID="
-    var urlPathDisplayYourOrders:String = "http://localhost/idisplayYourOrders.php?userID="
+    var urlPathDisplayYourOrders:String = "http://localhost/displayYourOrders.php?userID="
+    var urlPathGetFriendEvents:String = "http://localhost/getFriendEvents.php?friends="
+    
     weak var delegate: EventModelProtocal!
     var data : NSMutableData = NSMutableData()
     var userID = ""
     var eventID = ""
+    var param = ""
     
     init(userID: String) {
         self.userID = userID
@@ -30,6 +33,11 @@ class EventModel: NSObject, NSURLSessionDelegate {
         self.eventID = eventID
     }
     
+    init(param: String) {
+        self.param = param
+    }
+    
+    
     func getJSON(whichPHP: String) {
         var urlPath:String = ""
         switch whichPHP {
@@ -39,6 +47,8 @@ class EventModel: NSObject, NSURLSessionDelegate {
             urlPath = urlPathDisplayAllOrders + String(eventID)
         case "displayYourOrders" :
             urlPath = urlPathDisplayYourOrders + String(userID) + "eventID=" + String(eventID)
+        case "friendEvents" :
+            urlPath = urlPathGetFriendEvents + param
         default :
             break;
             
@@ -71,11 +81,11 @@ class EventModel: NSObject, NSURLSessionDelegate {
         
     }
     func parseJSON() {
-        
         var jsonResult: NSMutableArray = NSMutableArray()
         
         do{
-            jsonResult = try NSJSONSerialization.JSONObjectWithData(self.data, options:NSJSONReadingOptions.AllowFragments) as! NSMutableArray
+            let jsonRaw = try NSJSONSerialization.JSONObjectWithData(self.data, options:NSJSONReadingOptions.AllowFragments) as! NSArray
+            jsonResult = jsonRaw.mutableCopy() as! NSMutableArray
             
         } catch let error as NSError {
             print(error)
@@ -96,7 +106,7 @@ class EventModel: NSObject, NSURLSessionDelegate {
             dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
             
             //the following insures none of the JsonElement values are nil through optional binding
-            if let eventID = jsonElement["eventID"] as? String,
+            if let eventID = jsonElement["id"] as? String,
                 let userID = jsonElement["userID"] as? String,
                 let eventLocation = jsonElement["eventLocation"] as? String,
                 let expireDate = dateFormatter.dateFromString((jsonElement["expireDate"] as? String)!),
@@ -111,9 +121,10 @@ class EventModel: NSObject, NSURLSessionDelegate {
                 event.eventDescription = eventDescription
                 event.numOrders = numOrders
                 event.orderLimit = orderLimit
+                events.addObject(event)
             }
             
-            events.addObject(event)
+            
             
         }
         

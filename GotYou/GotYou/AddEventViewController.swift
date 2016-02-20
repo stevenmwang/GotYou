@@ -35,13 +35,22 @@ class AddEventViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (saveButton === sender) {
+            let dataDict:NSMutableDictionary = NSMutableDictionary()
             let startDate = NSDate()
-            let eventDesc = eventDescription.text ?? ""
-            let eventLoc = location.text ?? ""
-            let orderLim = Int(orderLimit.text ?? "")!
-            let date = startDate.dateByAddingTimeInterval(5.0 * 60.0)
+            let date = startDate.dateByAddingTimeInterval(Double(duration.text!)! * 60.0)
             
-            event = EventItem(eventID: "", userID: "", eventLocation: eventLoc, expireDate: date, eventDescription: eventDesc, numOrders: 0, orderLimit: orderLim)
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+            let dateString:String = dateFormatter.stringFromDate(date)
+            
+            dataDict.setValue(eventDescription.text, forKey: "eventDescription")
+            dataDict.setValue(location.text, forKey:"eventLocation")
+            dataDict.setValue(orderLimit.text, forKey:"orderLimit")
+            dataDict.setValue(dateString, forKey:"eventDate")
+            dataDict.setValue(FBSDKAccessToken.currentAccessToken().userID, forKey: "userID")
+            
+            let addModel = AddModel(dataParams: dataDict)
+            addModel.postToPHP()
             
         }
     }

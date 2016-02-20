@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDel
     var userID:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let pictureRequest = FBSDKGraphRequest(graphPath: "me/picture?type=large&redirect=false", parameters: nil)
         pictureRequest.startWithCompletionHandler({
             (connection, result, error: NSError!) -> Void in
@@ -36,18 +35,7 @@ class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDel
         
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-//            var fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
-//            fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
-//                var resultDict = result as! NSDictionary
-//                print(resultDict)
-//                var data : NSArray = resultDict["data"] as! NSArray
-//                
-//                for i in 0...data.count-1 {
-//                    let valueDict : NSDictionary = data[i] as! NSDictionary
-//                    let id = valueDict.objectForKey("id") as! String
-//                    print("the id value is \(id)")
-//                }
-//            }
+
         }
         else
         {
@@ -89,10 +77,6 @@ class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDel
         print("User Logged Out")
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        let VC = segue.destinationViewController as! TabBarController
-        VC.userID = userID
-    }
     
 
     /*
