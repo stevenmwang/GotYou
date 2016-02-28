@@ -21,6 +21,16 @@
 		F86C16241C70163400165B1A /* OtherOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16231C70163400165B1A /* OtherOrderTableViewCell.swift */; };
 		F86C162A1C7435AB00165B1A /* PlaceOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16291C7435AB00165B1A /* PlaceOrderTableViewController.swift */; };
 		F86C162C1C7435CA00165B1A /* PlaceOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C162B1C7435CA00165B1A /* PlaceOrderTableViewCell.swift */; };
+		F86C16301C7DB3A500165B1A /* LocuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C162F1C7DB3A500165B1A /* LocuModel.swift */; };
+		F86C16321C7DB53C00165B1A /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16311C7DB53C00165B1A /* MenuItem.swift */; };
+		F86C16341C7E626F00165B1A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16331C7E626F00165B1A /* Menu.swift */; };
+		F86C16361C7E62A400165B1A /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16351C7E62A400165B1A /* MenuSection.swift */; };
+		F86C163C1C7EBFB500165B1A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C163B1C7EBFB500165B1A /* MenuTableViewCell.swift */; };
+		F86C163E1C7EBFC800165B1A /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C163D1C7EBFC800165B1A /* MenuItemTableViewCell.swift */; };
+		F86C16401C7EBFDC00165B1A /* MenuSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C163F1C7EBFDC00165B1A /* MenuSectionTableViewCell.swift */; };
+		F86C16421C7FF9A100165B1A /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16411C7FF9A100165B1A /* MenuTableViewController.swift */; };
+		F86C16441C7FFADF00165B1A /* MenuSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16431C7FFADF00165B1A /* MenuSectionTableViewController.swift */; };
+		F86C16461C80002F00165B1A /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C16451C80002F00165B1A /* MenuItemTableViewController.swift */; };
 		F89EBC001C768B9F006810F5 /* AddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89EBBFF1C768B9F006810F5 /* AddModel.swift */; };
 		F8D350391C6AE20D00152BFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D350381C6AE20D00152BFD /* AppDelegate.swift */; };
 		F8D3503B1C6AE20D00152BFD /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3503A1C6AE20D00152BFD /* AddEventViewController.swift */; };
@@ -68,6 +78,16 @@
 		F86C16231C70163400165B1A /* OtherOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherOrderTableViewCell.swift; sourceTree = "<group>"; };
 		F86C16291C7435AB00165B1A /* PlaceOrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceOrderTableViewController.swift; sourceTree = "<group>"; };
 		F86C162B1C7435CA00165B1A /* PlaceOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceOrderTableViewCell.swift; sourceTree = "<group>"; };
+		F86C162F1C7DB3A500165B1A /* LocuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocuModel.swift; path = ../../../../../../../../Downloads/LocuProject/LocuProject/LocuModel.swift; sourceTree = "<group>"; };
+		F86C16311C7DB53C00165B1A /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		F86C16331C7E626F00165B1A /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		F86C16351C7E62A400165B1A /* MenuSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
+		F86C163B1C7EBFB500165B1A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		F86C163D1C7EBFC800165B1A /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		F86C163F1C7EBFDC00165B1A /* MenuSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionTableViewCell.swift; sourceTree = "<group>"; };
+		F86C16411C7FF9A100165B1A /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		F86C16431C7FFADF00165B1A /* MenuSectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionTableViewController.swift; sourceTree = "<group>"; };
+		F86C16451C80002F00165B1A /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		F89EBBFF1C768B9F006810F5 /* AddModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddModel.swift; sourceTree = "<group>"; };
 		F8D350351C6AE20D00152BFD /* GotYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GotYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D350381C6AE20D00152BFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +150,7 @@
 		F86C16251C72FD7100165B1A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F86C162F1C7DB3A500165B1A /* LocuModel.swift */,
 				F8D3506A1C6C529200152BFD /* EventModel.swift */,
 				F86C16211C70082C00165B1A /* OrderModel.swift */,
 				F89EBBFF1C768B9F006810F5 /* AddModel.swift */,
@@ -142,6 +163,9 @@
 			children = (
 				F81438051C6F637400A9C201 /* OrderItem.swift */,
 				F8D350661C6AE52200152BFD /* EventItem.swift */,
+				F86C16311C7DB53C00165B1A /* MenuItem.swift */,
+				F86C16331C7E626F00165B1A /* Menu.swift */,
+				F86C16351C7E62A400165B1A /* MenuSection.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -173,6 +197,9 @@
 				F814380E1C6F708A00A9C201 /* AllOrderTableViewCell.swift */,
 				F86C16231C70163400165B1A /* OtherOrderTableViewCell.swift */,
 				F8D3506C1C6C717600152BFD /* EventTableViewCell.swift */,
+				F86C163B1C7EBFB500165B1A /* MenuTableViewCell.swift */,
+				F86C163D1C7EBFC800165B1A /* MenuItemTableViewCell.swift */,
+				F86C163F1C7EBFDC00165B1A /* MenuSectionTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -184,6 +211,9 @@
 				F86C161F1C6FFF8000165B1A /* UserOtherEventTableViewController.swift */,
 				F86C161D1C6FFF6100165B1A /* UserEventTableViewController.swift */,
 				F8D350681C6C527800152BFD /* EventTableViewController.swift */,
+				F86C16411C7FF9A100165B1A /* MenuTableViewController.swift */,
+				F86C16431C7FFADF00165B1A /* MenuSectionTableViewController.swift */,
+				F86C16451C80002F00165B1A /* MenuItemTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -214,9 +244,9 @@
 			isa = PBXGroup;
 			children = (
 				F8D3503C1C6AE20E00152BFD /* Main.storyboard */,
+				F8D350381C6AE20D00152BFD /* AppDelegate.swift */,
 				F86C16281C72FD9D00165B1A /* Table View */,
 				F86C16261C72FD7A00165B1A /* Items */,
-				F8D350381C6AE20D00152BFD /* AppDelegate.swift */,
 				F86C16271C72FD8700165B1A /* View Controllers */,
 				F86C16251C72FD7100165B1A /* Models */,
 				F8D3503F1C6AE20E00152BFD /* Assets.xcassets */,
@@ -376,23 +406,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D3506D1C6C717600152BFD /* EventTableViewCell.swift in Sources */,
+				F86C16301C7DB3A500165B1A /* LocuModel.swift in Sources */,
+				F86C16421C7FF9A100165B1A /* MenuTableViewController.swift in Sources */,
+				F86C163C1C7EBFB500165B1A /* MenuTableViewCell.swift in Sources */,
 				F8D3503B1C6AE20D00152BFD /* AddEventViewController.swift in Sources */,
 				F81438101C6F708A00A9C201 /* AddOrderViewController.swift in Sources */,
 				F89EBC001C768B9F006810F5 /* AddModel.swift in Sources */,
 				F8D350391C6AE20D00152BFD /* AppDelegate.swift in Sources */,
 				F86C16201C6FFF8000165B1A /* UserOtherEventTableViewController.swift in Sources */,
 				F8D350691C6C527900152BFD /* EventTableViewController.swift in Sources */,
+				F86C163E1C7EBFC800165B1A /* MenuItemTableViewCell.swift in Sources */,
+				F86C16361C7E62A400165B1A /* MenuSection.swift in Sources */,
 				F86C162A1C7435AB00165B1A /* PlaceOrderTableViewController.swift in Sources */,
+				F86C16461C80002F00165B1A /* MenuItemTableViewController.swift in Sources */,
+				F86C16341C7E626F00165B1A /* Menu.swift in Sources */,
+				F86C16321C7DB53C00165B1A /* MenuItem.swift in Sources */,
 				F81437F81C6ECE2300A9C201 /* ViewController.swift in Sources */,
 				F86C16221C70082C00165B1A /* OrderModel.swift in Sources */,
 				F86C161E1C6FFF6100165B1A /* UserEventTableViewController.swift in Sources */,
 				F86C16241C70163400165B1A /* OtherOrderTableViewCell.swift in Sources */,
+				F86C16401C7EBFDC00165B1A /* MenuSectionTableViewCell.swift in Sources */,
 				F81438111C6F708A00A9C201 /* AllOrderTableViewCell.swift in Sources */,
 				F81438061C6F637400A9C201 /* OrderItem.swift in Sources */,
 				F8D3506B1C6C529200152BFD /* EventModel.swift in Sources */,
 				F814381B1C6FC85800A9C201 /* TabBarController.swift in Sources */,
 				F86C162C1C7435CA00165B1A /* PlaceOrderTableViewCell.swift in Sources */,
 				F8D350671C6AE52200152BFD /* EventItem.swift in Sources */,
+				F86C16441C7FFADF00165B1A /* MenuSectionTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -135,7 +135,24 @@ class PlaceOrderTableViewController: UITableViewController, EventModelProtocal {
         
         return cell
     }
+    /*
+    Make sure to change this function, so the correct menu is selected. Right now it's defaulted to Crepevine, but this is not always the case. It is determined by
+    the row of the table selected
+    */
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("MenuSegue", sender: self)
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "MenuSegue") {
+            let desVC:MenuTableViewController = (segue.destinationViewController as! UINavigationController).viewControllers.first as! MenuTableViewController
+            let locmod = LocuModel()
+            let menus = locmod.getMenu("Crepevine", city: "Palo Alto")
+            desVC.menus = menus
+        }
+    }
     
+    @IBAction func backToPlaceOrderTableViewController(segue:UIStoryboardSegue) {
+    }
 
     /*
     // Override to support conditional editing of the table view.

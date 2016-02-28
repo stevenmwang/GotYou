@@ -32,7 +32,6 @@ class ViewController: UIViewController, UITableViewDelegate, FBSDKLoginButtonDel
         
         
         
-        
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
 
